@@ -1,0 +1,56 @@
+﻿<Window x:Class="KeyboardMousePlayer.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:KeyboardMousePlayer"
+        mc:Ignorable="d"
+        SizeToContent="WidthAndHeight"
+        Title="KeyboardMousePlayer" Height="700" Width="1078" MaxHeight="700" Loaded="Window_Loaded" MaxWidth="1078" MinHeight="700"  MinWidth="1078" 
+        
+        >
+    <Window.Resources>
+        <Style x:Key="MyButton" TargetType="Button">
+            <Setter Property="OverridesDefaultStyle" Value="True" />
+            <Setter Property="Cursor" Value="Hand"     />
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+                        <Border Name="border" BorderThickness="0" BorderBrush="Black" Background="{TemplateBinding Background}">
+                            <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center" />
+                        </Border>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter Property="Opacity" Value="0.8" />
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+    </Window.Resources>
+    <Grid Height="700" Width="1078">
+        <Grid.Background>
+            <ImageBrush ImageSource="/images/sfondo.jpg"/>
+        </Grid.Background>
+        <Button Style="{StaticResource MyButton}" Background="Transparent"  Margin="952,155,0,0" VerticalAlignment="Top" Width="27" Name="btnRefresh" Click="btnRefresh_Click" Height="28" BorderBrush="{x:Null}">
+            <Button.Content>
+                <Image Source="/images/refresh.png" Height="41"></Image>
+            </Button.Content>
+        </Button>
+        <Button Style="{StaticResource MyButton}" Background="Transparent" HorizontalAlignment="Left" Margin="154,120,0,0" VerticalAlignment="Top" Width="55" Height="54" Name="playAzioneSingola" Click="playAzioneSingola_Click_1"  BorderBrush="{x:Null}">
+
+            <Button.Content>
+                <Image Source="/images/play.png" Height="27" Width="28"></Image>
+            </Button.Content>
+        </Button>
+        <DataGrid x:Name="dgSingle"  Margin="13,183,8,0"  HorizontalContentAlignment="Stretch"  ColumnWidth="*" Height="468" VerticalAlignment="Top" BorderThickness="0,0,0,0" ClipToBounds="True" CanUserSortColumns="False" CanUserResizeColumns="False" CanUserReorderColumns="False" CanUserResizeRows="False" CanUserDeleteRows="False" CanUserAddRows="False" GridLinesVisibility="None" SelectionMode="Single" SelectedItem="Mode=TwoWay}"/>
+        <Label Content="    Avvia File registrazione" Foreground="White" HorizontalAlignment="Left" Margin="0,131,0,0" VerticalAlignment="Top" Width="179" FontSize="12" FontWeight="Bold"/>
+        <TextBlock Foreground="DimGray" Grid.Row="0" FontSize="18" FontWeight="Bold" FontStyle="Italic" Text="KeyboardMousePlayer" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="39,15,0,0"/>
+        <Label Content="Mostra finestra progresso" Foreground="White" HorizontalAlignment="Left" Margin="430,41,0,0" VerticalAlignment="Top" Width="173" FontSize="12" FontWeight="Bold"/>
+        <CheckBox Name="progressCheckbox" 
+   Canvas.Left="20" Canvas.Top="10" Content=""  
+   FontFamily="Georgia" FontSize="20" FontWeight="Bold" Margin="608,50,435,593" Checked="progressCheckbox_Checked" Unchecked="progressCheckbox_Unchecked">
+        </CheckBox>
+    </Grid>
+</Window>

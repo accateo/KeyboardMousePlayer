@@ -1,0 +1,28 @@
+﻿<Window x:Class="KeyboardMousePlayer.ActionWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:KeyboardMousePlayer"
+        mc:Ignorable="d"
+        MaxWidth="350" MaxHeight="200"
+        MinWidth="350" MinHeight="200"
+        Title="MouseKeyboardPlayer"  Height="100" Width="350" Opacity="1" WindowStyle="None" Background="red"
+        SizeToContent="WidthAndHeight"
+        MouseEnter="window_OnMouseEnter"
+        MouseLeave="window_OnMouseLeave">
+    <WindowChrome.WindowChrome>
+        <WindowChrome GlassFrameThickness="0" CornerRadius="0" CaptionHeight="0"/>
+    </WindowChrome.WindowChrome>
+    <Grid Height="200" Width="350">
+        <Grid.FocusVisualStyle>
+            <Style/>
+        </Grid.FocusVisualStyle>
+        <Label Name="lblNomeSingle" Foreground="White" Content="Registrazione in esecuzione" HorizontalAlignment="Center" Margin="0,10,0,0" VerticalAlignment="Top" Width="330"/>
+        <Label  Foreground="White" x:Name="lblAggiornamento" Content="" HorizontalAlignment="Center" Margin="0,36,0,0" VerticalAlignment="Top" Width="330"/>
+        <Label Foreground="White" x:Name="lbldurata" Content="Stop esecuzione: LCTRL+LSHIFT" HorizontalAlignment="Center" Margin="0,67,0,0" VerticalAlignment="Top" Width="330"/>
+        <ProgressBar Name="pgBarAzioni" HorizontalAlignment="Left" Height="17" Margin="16,93,0,0" VerticalAlignment="Top" Width="324" />
+
+    </Grid>
+
+</Window>
